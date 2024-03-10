@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: csgAKSKubeflowAutoDeploy
+  namespace: namespace-workflow-1710047533598
+spec:
+  type: LoadBalancer
+  selector:
+    app: csgAKSKubeflowAutoDeploy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csgAKSKubeflowAutoDeploy
+  labels:
+    app: csgAKSKubeflowAutoDeploy
+  namespace: namespace-workflow-1710047533598
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csgAKSKubeflowAutoDeploy
+  template:
+    metadata:
+      labels:
+        app: csgAKSKubeflowAutoDeploy
+    spec:
+      containers:
+        - name: csgAKSKubeflowAutoDeploy
+          image: acrworkflow1710047533598.azurecr.io/image-workflow-1710047533598:latest
+          ports:
+            - containerPort: 80
